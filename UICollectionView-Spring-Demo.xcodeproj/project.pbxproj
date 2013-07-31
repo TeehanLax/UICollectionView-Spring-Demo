@@ -19,6 +19,8 @@
 		5E141AE017A9AC33007C6139 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E141AC817A9AC32007C6139 /* UIKit.framework */; };
 		5E141AE817A9AC33007C6139 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E141AE617A9AC33007C6139 /* InfoPlist.strings */; };
 		5E141AEA17A9AC33007C6139 /* UICollectionView_Spring_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AE917A9AC33007C6139 /* UICollectionView_Spring_DemoTests.m */; };
+		5E141AFA17A9AC9C007C6139 /* TLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AF917A9AC9C007C6139 /* TLViewController.m */; };
+		5E141AFD17A9ACD2007C6139 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AFC17A9ACD2007C6139 /* TLSpringFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		5E141AE517A9AC33007C6139 /* UICollectionView-Spring-DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UICollectionView-Spring-DemoTests-Info.plist"; sourceTree = "<group>"; };
 		5E141AE717A9AC33007C6139 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E141AE917A9AC33007C6139 /* UICollectionView_Spring_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICollectionView_Spring_DemoTests.m; sourceTree = "<group>"; };
+		5E141AF817A9AC9C007C6139 /* TLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLViewController.h; sourceTree = "<group>"; };
+		5E141AF917A9AC9C007C6139 /* TLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLViewController.m; sourceTree = "<group>"; };
+		5E141AFB17A9ACD2007C6139 /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSpringFlowLayout.h; sourceTree = "<group>"; };
+		5E141AFC17A9ACD2007C6139 /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSpringFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,10 @@
 			children = (
 				5E141AD317A9AC32007C6139 /* TLAppDelegate.h */,
 				5E141AD417A9AC32007C6139 /* TLAppDelegate.m */,
+				5E141AF817A9AC9C007C6139 /* TLViewController.h */,
+				5E141AF917A9AC9C007C6139 /* TLViewController.m */,
+				5E141AFB17A9ACD2007C6139 /* TLSpringFlowLayout.h */,
+				5E141AFC17A9ACD2007C6139 /* TLSpringFlowLayout.m */,
 				5E141AD617A9AC32007C6139 /* Images.xcassets */,
 				5E141ACB17A9AC32007C6139 /* Supporting Files */,
 			);
@@ -240,6 +250,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E141AFD17A9ACD2007C6139 /* TLSpringFlowLayout.m in Sources */,
+				5E141AFA17A9AC9C007C6139 /* TLViewController.m in Sources */,
 				5E141AD517A9AC32007C6139 /* TLAppDelegate.m in Sources */,
 				5E141AD117A9AC32007C6139 /* main.m in Sources */,
 			);
