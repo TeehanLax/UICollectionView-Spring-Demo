@@ -24,7 +24,7 @@
     self.minimumInteritemSpacing = 10;
     self.minimumLineSpacing = 10;
     self.itemSize = CGSizeMake(300, 44);
-    self.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    self.sectionInset = UIEdgeInsetsMake(20, 10, 10, 10);
     
     self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];
     self.visibleIndexPathsSet = [NSMutableSet set];
@@ -35,6 +35,7 @@
 -(void)prepareLayout {
     [super prepareLayout];
     
+    // Need to overflow our actual visible rect slightly to avoid flickering.
     CGRect visibleRect = CGRectInset((CGRect){.origin = self.collectionView.bounds.origin, .size = self.collectionView.frame.size}, -100, -100);
     
     NSArray *itemsInVisibleRectArray = [super layoutAttributesForElementsInRect:visibleRect];

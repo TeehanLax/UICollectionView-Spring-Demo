@@ -448,6 +448,7 @@
 				5E141AEF17A9AC33007C6139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E141AF017A9AC33007C6139 /* Build configuration list for PBXNativeTarget "UICollectionView-Spring-DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +457,7 @@
 				5E141AF217A9AC33007C6139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

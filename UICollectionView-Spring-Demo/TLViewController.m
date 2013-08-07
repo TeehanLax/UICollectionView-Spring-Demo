@@ -20,16 +20,11 @@ static NSString * CellIdentifier = @"CellIdentifier";
     [super viewDidLoad];
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
+    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.137f alpha:1.0f];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self.collectionViewLayout invalidateLayout];
 }
 
 #pragma mark - UICollectionView Methods
@@ -41,7 +36,8 @@ static NSString * CellIdentifier = @"CellIdentifier";
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor redColor];
+    UIColor *tlBlue = [UIColor colorWithHue:0.5472f saturation:0.6f brightness:0.53f alpha:1.0f];
+    cell.backgroundColor = tlBlue;
     
     return cell;
 }
