@@ -14,24 +14,9 @@
 		5E141AD117A9AC32007C6139 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AD017A9AC32007C6139 /* main.m */; };
 		5E141AD517A9AC32007C6139 /* TLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AD417A9AC32007C6139 /* TLAppDelegate.m */; };
 		5E141AD717A9AC32007C6139 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E141AD617A9AC32007C6139 /* Images.xcassets */; };
-		5E141ADE17A9AC33007C6139 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E141ADD17A9AC33007C6139 /* XCTest.framework */; };
-		5E141ADF17A9AC33007C6139 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E141AC417A9AC32007C6139 /* Foundation.framework */; };
-		5E141AE017A9AC33007C6139 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E141AC817A9AC32007C6139 /* UIKit.framework */; };
-		5E141AE817A9AC33007C6139 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E141AE617A9AC33007C6139 /* InfoPlist.strings */; };
-		5E141AEA17A9AC33007C6139 /* UICollectionView_Spring_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AE917A9AC33007C6139 /* UICollectionView_Spring_DemoTests.m */; };
 		5E141AFA17A9AC9C007C6139 /* TLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AF917A9AC9C007C6139 /* TLViewController.m */; };
 		5E141AFD17A9ACD2007C6139 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AFC17A9ACD2007C6139 /* TLSpringFlowLayout.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		5E141AE117A9AC33007C6139 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E141AB917A9AC32007C6139 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5E141AC017A9AC32007C6139;
-			remoteInfo = "UICollectionView-Spring-Demo";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5E141AC117A9AC32007C6139 /* UICollectionView-Spring-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UICollectionView-Spring-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +30,6 @@
 		5E141AD317A9AC32007C6139 /* TLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAppDelegate.h; sourceTree = "<group>"; };
 		5E141AD417A9AC32007C6139 /* TLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLAppDelegate.m; sourceTree = "<group>"; };
 		5E141AD617A9AC32007C6139 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5E141ADC17A9AC33007C6139 /* UICollectionView-Spring-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UICollectionView-Spring-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E141ADD17A9AC33007C6139 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5E141AE517A9AC33007C6139 /* UICollectionView-Spring-DemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UICollectionView-Spring-DemoTests-Info.plist"; sourceTree = "<group>"; };
 		5E141AE717A9AC33007C6139 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -67,16 +51,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E141AD917A9AC33007C6139 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E141ADE17A9AC33007C6139 /* XCTest.framework in Frameworks */,
-				5E141AE017A9AC33007C6139 /* UIKit.framework in Frameworks */,
-				5E141ADF17A9AC33007C6139 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,7 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				5E141AC117A9AC32007C6139 /* UICollectionView-Spring-Demo.app */,
-				5E141ADC17A9AC33007C6139 /* UICollectionView-Spring-DemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,24 +147,6 @@
 			productReference = 5E141AC117A9AC32007C6139 /* UICollectionView-Spring-Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5E141ADB17A9AC33007C6139 /* UICollectionView-Spring-DemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5E141AF017A9AC33007C6139 /* Build configuration list for PBXNativeTarget "UICollectionView-Spring-DemoTests" */;
-			buildPhases = (
-				5E141AD817A9AC33007C6139 /* Sources */,
-				5E141AD917A9AC33007C6139 /* Frameworks */,
-				5E141ADA17A9AC33007C6139 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5E141AE217A9AC33007C6139 /* PBXTargetDependency */,
-			);
-			name = "UICollectionView-Spring-DemoTests";
-			productName = "UICollectionView-Spring-DemoTests";
-			productReference = 5E141ADC17A9AC33007C6139 /* UICollectionView-Spring-DemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -201,11 +156,6 @@
 				CLASSPREFIX = TL;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Teehan+Lax";
-				TargetAttributes = {
-					5E141ADB17A9AC33007C6139 = {
-						TestTargetID = 5E141AC017A9AC32007C6139;
-					};
-				};
 			};
 			buildConfigurationList = 5E141ABC17A9AC32007C6139 /* Build configuration list for PBXProject "UICollectionView-Spring-Demo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -220,7 +170,6 @@
 			projectRoot = "";
 			targets = (
 				5E141AC017A9AC32007C6139 /* UICollectionView-Spring-Demo */,
-				5E141ADB17A9AC33007C6139 /* UICollectionView-Spring-DemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,14 +181,6 @@
 			files = (
 				5E141ACF17A9AC32007C6139 /* InfoPlist.strings in Resources */,
 				5E141AD717A9AC32007C6139 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E141ADA17A9AC33007C6139 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E141AE817A9AC33007C6139 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,23 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E141AD817A9AC33007C6139 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E141AEA17A9AC33007C6139 /* UICollectionView_Spring_DemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		5E141AE217A9AC33007C6139 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5E141AC017A9AC32007C6139 /* UICollectionView-Spring-Demo */;
-			targetProxy = 5E141AE117A9AC33007C6139 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5E141ACD17A9AC32007C6139 /* InfoPlist.strings */ = {
@@ -389,46 +314,6 @@
 			};
 			name = Release;
 		};
-		5E141AF117A9AC33007C6139 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UICollectionView-Spring-Demo.app/UICollectionView-Spring-Demo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UICollectionView-Spring-Demo/UICollectionView-Spring-Demo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "UICollectionView-Spring-DemoTests/UICollectionView-Spring-DemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		5E141AF217A9AC33007C6139 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UICollectionView-Spring-Demo.app/UICollectionView-Spring-Demo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UICollectionView-Spring-Demo/UICollectionView-Spring-Demo-Prefix.pch";
-				INFOPLIST_FILE = "UICollectionView-Spring-DemoTests/UICollectionView-Spring-DemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,15 +331,6 @@
 			buildConfigurations = (
 				5E141AEE17A9AC33007C6139 /* Debug */,
 				5E141AEF17A9AC33007C6139 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E141AF017A9AC33007C6139 /* Build configuration list for PBXNativeTarget "UICollectionView-Spring-DemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5E141AF117A9AC33007C6139 /* Debug */,
-				5E141AF217A9AC33007C6139 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
