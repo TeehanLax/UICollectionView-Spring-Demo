@@ -11,6 +11,8 @@
 @interface TLSpringFlowLayout ()
 
 @property (nonatomic, strong) UIDynamicAnimator *dynamicAnimator;
+
+// Needed for tiling
 @property (nonatomic, strong) NSMutableSet *visibleIndexPathsSet;
 @property (nonatomic, assign) CGFloat latestDelta;
 
@@ -24,7 +26,7 @@
     self.minimumInteritemSpacing = 10;
     self.minimumLineSpacing = 10;
     self.itemSize = CGSizeMake(300, 44);
-    self.sectionInset = UIEdgeInsetsMake(20, 10, 10, 10);
+    self.sectionInset = UIEdgeInsetsMake(30, 10, 10, 10);
     
     self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];
     self.visibleIndexPathsSet = [NSMutableSet set];
@@ -42,17 +44,15 @@
     
     NSSet *itemsIndexPathsInVisibleRectSet = [NSSet setWithArray:[itemsInVisibleRectArray valueForKey:@"indexPath"]];
     
-    CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
-    
     // Step 1: Remove any behaviours that are no longer visible.
     NSArray *noLongerVisibleBehaviours = [self.dynamicAnimator.behaviors filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UIAttachmentBehavior *behaviour, NSDictionary *bindings) {
-        BOOL currentlyVisible = [itemsIndexPathsInVisibleRectSet member:[[[behaviour items] lastObject] indexPath]] != nil;
+        BOOL currentlyVisible = [itemsIndexPathsInVisibleRectSet member:[[[behaviour items] firstObject] indexPath]] != nil;
         return !currentlyVisible;
     }]];
     
     [noLongerVisibleBehaviours enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
         [self.dynamicAnimator removeBehavior:obj];
-        [self.visibleIndexPathsSet removeObject:[[[obj items] lastObject] indexPath]];
+        [self.visibleIndexPathsSet removeObject:[[[obj items] firstObject] indexPath]];
     }];
     
     // Step 2: Add any newly visible behaviours.
@@ -61,6 +61,8 @@
         BOOL currentlyVisible = [self.visibleIndexPathsSet member:item.indexPath] != nil;
         return !currentlyVisible;
     }]];
+    
+    CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
     
     [newlyVisibleItems enumerateObjectsUsingBlock:^(UICollectionViewLayoutAttributes *item, NSUInteger idx, BOOL *stop) {
         CGPoint center = item.center;
@@ -100,13 +102,13 @@
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     UIScrollView *scrollView = self.collectionView;
     CGFloat delta = newBounds.origin.y - scrollView.bounds.origin.y;
-    CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
     
     self.latestDelta = delta;
     
+    CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
+    
     [self.dynamicAnimator.behaviors enumerateObjectsUsingBlock:^(UIAttachmentBehavior *springBehaviour, NSUInteger idx, BOOL *stop) {
-        CGPoint anchorPoint = springBehaviour.anchorPoint;
-        CGFloat distanceFromTouch = fabsf(touchLocation.y - anchorPoint.y);
+        CGFloat distanceFromTouch = fabsf(touchLocation.y - springBehaviour.anchorPoint.y);
         CGFloat scrollResistance = distanceFromTouch / 1500.0f;
         
         UICollectionViewLayoutAttributes *item = [springBehaviour.items firstObject];
