@@ -68,7 +68,7 @@
         CGPoint center = item.center;
         UIAttachmentBehavior *springBehaviour = [[UIAttachmentBehavior alloc] initWithItem:item attachedToAnchor:center];
         
-        springBehaviour.length = 0.0f;
+        springBehaviour.length = 1.0f;
         springBehaviour.damping = 0.8f;
         springBehaviour.frequency = 1.0f;
         
