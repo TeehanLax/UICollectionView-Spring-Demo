@@ -15,6 +15,7 @@
 // Needed for tiling
 @property (nonatomic, strong) NSMutableSet *visibleIndexPathsSet;
 @property (nonatomic, assign) CGFloat latestDelta;
+@property (nonatomic, assign) UIInterfaceOrientation interfaceOrientation;
 
 @end
 
@@ -36,6 +37,14 @@
 
 -(void)prepareLayout {
     [super prepareLayout];
+    
+    if ([[UIApplication sharedApplication] statusBarOrientation] != self.interfaceOrientation) {
+        
+        [self.dynamicAnimator removeAllBehaviors];
+        self.visibleIndexPathsSet = [NSMutableSet set];
+    }
+    
+    self.interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
     
     // Need to overflow our actual visible rect slightly to avoid flickering.
     CGRect visibleRect = CGRectInset((CGRect){.origin = self.collectionView.bounds.origin, .size = self.collectionView.frame.size}, -100, -100);
