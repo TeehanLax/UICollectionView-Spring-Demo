@@ -105,7 +105,9 @@
 }
 
 -(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.dynamicAnimator layoutAttributesForCellAtIndexPath:indexPath];
+    UICollectionViewLayoutAttributes *dynamicLayoutAttributes = [self.dynamicAnimator layoutAttributesForCellAtIndexPath:indexPath];
+    // Check if dynamic animator has layout attributes for a layout, otherwise use the flow layouts properties. This will prevent crashing when you add items later in a performBatchUpdates block (e.g. triggered by NSFetchedResultsController update)
+    return (dynamicLayoutAttributes)?dynamicLayoutAttributes:[super layoutAttributesForItemAtIndexPath:indexPath];
 }
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
