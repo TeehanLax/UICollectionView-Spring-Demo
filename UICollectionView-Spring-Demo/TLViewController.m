@@ -7,39 +7,38 @@
 //
 
 #import "TLViewController.h"
-
-@interface TLViewController ()
-
-@end
+#import "TLSpringFlowLayout.h"
 
 @implementation TLViewController
 
-static NSString * CellIdentifier = @"CellIdentifier";
+static NSString * CellIdentifier = @"cellIdentifier";
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.137f alpha:1.0f];
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+    self.collectionView.layer.shadowOffset = CGSizeMake(1.5, 1.5);
+    self.collectionView.layer.shadowOpacity = 0.4;
+    self.collectionView.layer.shadowRadius = 1.2;
+    self.collectionView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
 }
 
 #pragma mark - UICollectionView Methods
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 10000;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    if (cell) return cell;
+    else {
+        UICollectionViewCell *otherCell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    UIColor *tlBlue = [UIColor colorWithHue:0.5472f saturation:0.6f brightness:0.53f alpha:1.0f];
-    cell.backgroundColor = tlBlue;
+        UIColor *tlBlue = [UIColor colorWithHue:0.5472f saturation:0.6f brightness:0.53f alpha:1.0f];
+        otherCell.backgroundColor = tlBlue;
     
-    return cell;
+        return otherCell;
+    }
 }
 
 @end
