@@ -7,8 +7,6 @@
 //
 
 #import "TLAppDelegate.h"
-#import "TLViewController.h"
-#import "TLSpringFlowLayout.h"
 
 @implementation TLAppDelegate
 

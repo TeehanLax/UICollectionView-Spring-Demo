@@ -15,11 +15,6 @@ static NSString * CellIdentifier = @"cellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.collectionView.layer.shadowOffset = CGSizeMake(1.5, 1.5);
-    self.collectionView.layer.shadowOpacity = 0.4;
-    self.collectionView.layer.shadowRadius = 1.2;
-    self.collectionView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
 }
 
 #pragma mark - UICollectionView Methods
