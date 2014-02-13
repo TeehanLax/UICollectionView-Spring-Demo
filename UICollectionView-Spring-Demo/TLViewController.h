@@ -6,8 +6,10 @@
 //  Copyright (c) 2013 Teehan+Lax. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-@interface TLViewController : UICollectionViewController
+@interface TLViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 
 @end

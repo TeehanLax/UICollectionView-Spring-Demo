@@ -7,19 +7,10 @@
 //
 
 #import "TLAppDelegate.h"
-#import "TLViewController.h"
-#import "TLSpringFlowLayout.h"
 
 @implementation TLAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    self.window.rootViewController = [[TLViewController alloc] initWithCollectionViewLayout:[[TLSpringFlowLayout alloc] init]];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     return YES;
 }
 

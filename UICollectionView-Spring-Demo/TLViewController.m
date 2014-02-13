@@ -7,39 +7,34 @@
 //
 
 #import "TLViewController.h"
-
-@interface TLViewController ()
-
-@end
+#import "TLSpringFlowLayout.h"
 
 @implementation TLViewController
 
-static NSString * CellIdentifier = @"CellIdentifier";
+static NSString * CellIdentifier = @"cellIdentifier";
 
--(void)viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
-    self.collectionView.backgroundColor = [UIColor colorWithWhite:0.137f alpha:1.0f];
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.headerView.layer.shadowOpacity = 0.5;
+    self.headerView.layer.shadowRadius = 3.8;
+    self.headerView.layer.shadowOffset = CGSizeMake(0.6, 0.6);
+    self.headerView.layer.shadowColor = [UIColor darkGrayColor].CGColor;
 }
 
 #pragma mark - UICollectionView Methods
 
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 10000;
 }
 
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    UIColor *tlBlue = [UIColor colorWithHue:0.5472f saturation:0.6f brightness:0.53f alpha:1.0f];
-    cell.backgroundColor = tlBlue;
-    
-    return cell;
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *otherCell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    return otherCell;
 }
 
 @end

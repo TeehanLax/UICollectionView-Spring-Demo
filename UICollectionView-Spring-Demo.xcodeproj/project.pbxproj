@@ -16,6 +16,8 @@
 		5E141AD717A9AC32007C6139 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E141AD617A9AC32007C6139 /* Images.xcassets */; };
 		5E141AFA17A9AC9C007C6139 /* TLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AF917A9AC9C007C6139 /* TLViewController.m */; };
 		5E141AFD17A9ACD2007C6139 /* TLSpringFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E141AFC17A9ACD2007C6139 /* TLSpringFlowLayout.m */; };
+		9938B77D18A6D93500E5BC73 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9938B77C18A6D93500E5BC73 /* Storyboard.storyboard */; };
+		9944AA2818AB11FE00BAFCFC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9944AA2718AB11FE00BAFCFC /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		5E141AF917A9AC9C007C6139 /* TLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLViewController.m; sourceTree = "<group>"; };
 		5E141AFB17A9ACD2007C6139 /* TLSpringFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSpringFlowLayout.h; sourceTree = "<group>"; };
 		5E141AFC17A9ACD2007C6139 /* TLSpringFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSpringFlowLayout.m; sourceTree = "<group>"; };
+		9938B77C18A6D93500E5BC73 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		9944AA2718AB11FE00BAFCFC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9944AA2818AB11FE00BAFCFC /* QuartzCore.framework in Frameworks */,
 				5E141AC717A9AC32007C6139 /* CoreGraphics.framework in Frameworks */,
 				5E141AC917A9AC32007C6139 /* UIKit.framework in Frameworks */,
 				5E141AC517A9AC32007C6139 /* Foundation.framework in Frameworks */,
@@ -75,6 +80,7 @@
 		5E141AC317A9AC32007C6139 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9944AA2718AB11FE00BAFCFC /* QuartzCore.framework */,
 				5E141AC417A9AC32007C6139 /* Foundation.framework */,
 				5E141AC617A9AC32007C6139 /* CoreGraphics.framework */,
 				5E141AC817A9AC32007C6139 /* UIKit.framework */,
@@ -90,6 +96,7 @@
 				5E141AD417A9AC32007C6139 /* TLAppDelegate.m */,
 				5E141AF817A9AC9C007C6139 /* TLViewController.h */,
 				5E141AF917A9AC9C007C6139 /* TLViewController.m */,
+				9938B77C18A6D93500E5BC73 /* Storyboard.storyboard */,
 				5E141AFB17A9ACD2007C6139 /* TLSpringFlowLayout.h */,
 				5E141AFC17A9ACD2007C6139 /* TLSpringFlowLayout.m */,
 				5E141AD617A9AC32007C6139 /* Images.xcassets */,
@@ -181,6 +188,7 @@
 			files = (
 				5E141ACF17A9AC32007C6139 /* InfoPlist.strings in Resources */,
 				5E141AD717A9AC32007C6139 /* Images.xcassets in Resources */,
+				9938B77D18A6D93500E5BC73 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
