@@ -15,6 +15,7 @@
 
 // Needed for tiling
 @property (nonatomic, strong) NSMutableSet *visibleIndexPathsSet;
+@property (nonatomic, strong) NSMutableSet *visibleHeaderAndFooterSet;
 @property (nonatomic, assign) CGFloat latestDelta;
 @property (nonatomic, assign) UIInterfaceOrientation interfaceOrientation;
 
@@ -41,6 +42,7 @@
 - (void)setup {
     _dynamicAnimator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];
     _visibleIndexPathsSet = [NSMutableSet set];
+    _visibleHeaderAndFooterSet = [[NSMutableSet alloc] init];
 }
 
 - (void)prepareLayout {
@@ -62,20 +64,20 @@
     
     // Step 1: Remove any behaviours that are no longer visible.
     NSArray *noLongerVisibleBehaviours = [self.dynamicAnimator.behaviors filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UIAttachmentBehavior *behaviour, NSDictionary *bindings) {
-        BOOL currentlyVisible = [itemsIndexPathsInVisibleRectSet member:[[[behaviour items] firstObject] indexPath]] != nil;
-        return !currentlyVisible;
+        return [itemsIndexPathsInVisibleRectSet containsObject:[[[behaviour items] firstObject] indexPath]] == NO;
     }]];
     
     [noLongerVisibleBehaviours enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
         [self.dynamicAnimator removeBehavior:obj];
         [self.visibleIndexPathsSet removeObject:[[[obj items] firstObject] indexPath]];
+        [self.visibleHeaderAndFooterSet removeObject:[[[obj items] firstObject] indexPath]];
     }];
     
     // Step 2: Add any newly visible behaviours.
     // A "newly visible" item is one that is in the itemsInVisibleRect(Set|Array) but not in the visibleIndexPathsSet
     NSArray *newlyVisibleItems = [itemsInVisibleRectArray filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UICollectionViewLayoutAttributes *item, NSDictionary *bindings) {
-        BOOL currentlyVisible = [self.visibleIndexPathsSet member:item.indexPath] != nil;
-        return !currentlyVisible;
+        return (item.representedElementCategory == UICollectionElementCategoryCell ?
+                [self.visibleIndexPathsSet containsObject:item.indexPath] : [self.visibleHeaderAndFooterSet containsObject:item.indexPath]) == NO;
     }]];
     
     CGPoint touchLocation = [self.collectionView.panGestureRecognizer locationInView:self.collectionView];
@@ -117,7 +119,14 @@
         }
         
         [self.dynamicAnimator addBehavior:springBehaviour];
-        [self.visibleIndexPathsSet addObject:item.indexPath];
+        if(item.representedElementCategory == UICollectionElementCategoryCell)
+        {
+            [self.visibleIndexPathsSet addObject:item.indexPath];
+        }
+        else
+        {
+            [self.visibleHeaderAndFooterSet addObject:item.indexPath];
+        }
     }];
 }
 
