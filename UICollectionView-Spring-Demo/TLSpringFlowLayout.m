@@ -59,7 +59,21 @@
     CGRect visibleRect = CGRectInset((CGRect){.origin = self.collectionView.bounds.origin, .size = self.collectionView.frame.size}, -100, -100);
     
     NSArray *itemsInVisibleRectArray = [super layoutAttributesForElementsInRect:visibleRect];
-    
+
+    // update dynamic animator items and behaviors on insert/delete
+    [self.dynamicAnimator.behaviors enumerateObjectsUsingBlock:^(UIAttachmentBehavior *springBehaviour, NSUInteger idx, BOOL *stop) {
+        UICollectionViewLayoutAttributes *item = [springBehaviour.items firstObject];
+        for (UICollectionViewLayoutAttributes *attributes in itemsInVisibleRectArray) {
+            if ([attributes.indexPath isEqual:item.indexPath]) {
+                if ([itemsInVisibleRectArray count] != [self.dynamicAnimator.behaviors count]) {
+                    item.frame = attributes.frame;
+                    [self.dynamicAnimator updateItemUsingCurrentState:item];
+                }
+                springBehaviour.anchorPoint = attributes.center;
+            }
+        }
+    }];
+
     NSSet *itemsIndexPathsInVisibleRectSet = [NSSet setWithArray:[itemsInVisibleRectArray valueForKey:@"indexPath"]];
     
     // Step 1: Remove any behaviours that are no longer visible.
