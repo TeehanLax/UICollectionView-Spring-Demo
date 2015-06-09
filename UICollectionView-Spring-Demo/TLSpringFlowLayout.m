@@ -93,7 +93,7 @@
         // If our touchLocation is not (0,0), we'll need to adjust our item's center "in flight"
         if (!CGPointEqualToPoint(CGPointZero, touchLocation)) {
             if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-                CGFloat distanceFromTouch = fabsf(touchLocation.y - springBehaviour.anchorPoint.y);
+                CGFloat distanceFromTouch = fabs(touchLocation.y - springBehaviour.anchorPoint.y);
                 
                 CGFloat scrollResistance;
                 if (self.scrollResistanceFactor) scrollResistance = distanceFromTouch / self.scrollResistanceFactor;
@@ -105,7 +105,7 @@
                 item.center = center;
                 
             } else {
-                CGFloat distanceFromTouch = fabsf(touchLocation.x - springBehaviour.anchorPoint.x);
+                CGFloat distanceFromTouch = fabs(touchLocation.x - springBehaviour.anchorPoint.x);
                 
                 CGFloat scrollResistance;
                 if (self.scrollResistanceFactor) scrollResistance = distanceFromTouch / self.scrollResistanceFactor;
@@ -153,7 +153,7 @@
     
     [self.dynamicAnimator.behaviors enumerateObjectsUsingBlock:^(UIAttachmentBehavior *springBehaviour, NSUInteger idx, BOOL *stop) {
         if (self.scrollDirection == UICollectionViewScrollDirectionVertical) {
-            CGFloat distanceFromTouch = fabsf(touchLocation.y - springBehaviour.anchorPoint.y);
+            CGFloat distanceFromTouch = fabs(touchLocation.y - springBehaviour.anchorPoint.y);
             
             CGFloat scrollResistance;
             if (self.scrollResistanceFactor) scrollResistance = distanceFromTouch / self.scrollResistanceFactor;
@@ -168,7 +168,7 @@
             
             [self.dynamicAnimator updateItemUsingCurrentState:item];
         } else {
-            CGFloat distanceFromTouch = fabsf(touchLocation.x - springBehaviour.anchorPoint.x);
+            CGFloat distanceFromTouch = fabs(touchLocation.x - springBehaviour.anchorPoint.x);
             
             CGFloat scrollResistance;
             if (self.scrollResistanceFactor) scrollResistance = distanceFromTouch / self.scrollResistanceFactor;
