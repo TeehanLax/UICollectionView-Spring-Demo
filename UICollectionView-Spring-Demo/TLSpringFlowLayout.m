@@ -64,13 +64,13 @@
     
     // Step 1: Remove any behaviours that are no longer visible.
     NSArray *noLongerVisibleBehaviours = [self.dynamicAnimator.behaviors filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(UIAttachmentBehavior *behaviour, NSDictionary *bindings) {
-        return [itemsIndexPathsInVisibleRectSet containsObject:[[[behaviour items] firstObject] indexPath]] == NO;
+        return [itemsIndexPathsInVisibleRectSet containsObject:[(UICollectionViewLayoutAttributes *)[[behaviour items] firstObject] indexPath]] == NO;
     }]];
     
     [noLongerVisibleBehaviours enumerateObjectsUsingBlock:^(id obj, NSUInteger index, BOOL *stop) {
         [self.dynamicAnimator removeBehavior:obj];
-        [self.visibleIndexPathsSet removeObject:[[[obj items] firstObject] indexPath]];
-        [self.visibleHeaderAndFooterSet removeObject:[[[obj items] firstObject] indexPath]];
+        [self.visibleIndexPathsSet removeObject:[(UICollectionViewLayoutAttributes *)[[obj items] firstObject] indexPath]];
+        [self.visibleHeaderAndFooterSet removeObject:[(UICollectionViewLayoutAttributes *)[[obj items] firstObject] indexPath]];
     }];
     
     // Step 2: Add any newly visible behaviours.
